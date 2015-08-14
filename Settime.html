@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="left.css">
+<title>Insert title here</title>
+<style>
+img{
+width: 300px;
+height: 300px;}
+</style>
+</head>
+<body>
+<h1>setting time count</h1>
+<input type="button" name="time" value="5" /><br/>
+<img src="./images/1.jpg" alt=""/>
+<script>
+var clock = null;
+function settime(){
+	//document.getElementsByTagName('img')[0].src = 'disk.jpg';
+var inp = document.getElementsByName('time')[0];
+	var time = parseInt(inp.value) - 1;
+    inp.value = time;
+    if(time == 0){
+    	document.getElementsByTagName('img')[0].src='./images/2.jpg';
+        clearTimeout(clock);
+    }else{
+    setTimeout('settime()', 1000);}
+}
+clock = setTimeout('settime()',1000);
+</script>
+</body>
+</html>
